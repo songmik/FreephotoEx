@@ -73,7 +73,6 @@
                 android:shadowRadius="5"
                 android:textColor="@color/white"
                 android:textSize="12sp"
-                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@id/profileImageView"
                 app:layout_constraintEnd_toEndOf="@id/authorTextView"
                 app:layout_constraintStart_toStartOf="@id/authorTextView"

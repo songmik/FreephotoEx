@@ -1,6 +1,5 @@
 package com.example.a22_freephoto
 
-import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +12,8 @@ import com.example.a22_freephoto.databinding.ItemPhotoBinding
 class PhotoAdapter: RecyclerView.Adapter<PhotoAdapter.ViewHolder>() {
 
     var photos: List<PhotoResponse> = emptyList()
+
+    var onClickPhoto: (PhotoResponse) -> Unit ={}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(
@@ -29,9 +30,15 @@ class PhotoAdapter: RecyclerView.Adapter<PhotoAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int = photos.size
 
-    class  ViewHolder(
+    inner class  ViewHolder(
         private val binding: ItemPhotoBinding
     ): RecyclerView.ViewHolder(binding.root){
+
+        init {
+            binding.root.setOnClickListener {
+                onClickPhoto(photos[adapterPosition])
+            }
+        }
 
         fun bind(photo: PhotoResponse){
 

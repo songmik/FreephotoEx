@@ -61,5 +61,8 @@ dependencies {
 
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
+    //shimmer를 위한 의존성 추가
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
 
 }
